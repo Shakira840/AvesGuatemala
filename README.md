@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+Aplicación de Aves de Guatemala
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Descripción
 
-## Available Scripts
+Esta aplicación web para móviles muestra aves observadas en Guatemala utilizando datos de eBird y complementos de Wikidata y Wikipedia.
 
-In the project directory, you can run:
+Pantallas incluidas:
 
-### `npm start`
+- Home:
+  - Nombre completo y carné del estudiante.
+  - Botón Cargar para acceder a la lista de aves.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- BirdsList:
+  - Lista de aves observadas con:
+    - Nombre común y científico
+    - Familia y orden (legibles en español)
+    - Ubicación y fecha de observación
+    - Imagen (si existe)
+    - Descripción de la especie (español con fallback inglés)
+  - Botón Volver para regresar a Home.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Código fuente
 
-### `npm test`
+El código fuente completo se encuentra en la carpeta src/:
+- Home.js
+- BirdsList.js
+- App.js
+- index.js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Dependencias principales:
+- React
+- Axios
 
-### `npm run build`
+No olvides revisar package.json para otras dependencias.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Guía para compilar y ejecutar
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Paso 1: Clonar o descargar el proyecto
+- git clone <url-del-repositorio>
+- cd mi-proyecto-aves
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Paso 2: Instalar dependencias
+- npm install
 
-### `npm run eject`
+Paso 3: Agregar la API Key de eBird
+- Abrir BirdsList.js y reemplazar "TU_API_KEY" por tu clave personal de eBird:
+  headers: { "X-eBirdApiToken": "TU_API_KEY" }
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Paso 4: Iniciar la aplicación en modo desarrollo
+- npm start
+- Esto abrirá la aplicación en el navegador (http://localhost:3000/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Paso 5: Compilar para producción (opcional)
+- npm run build
+- Esto genera la carpeta build/ lista para subir a un servidor web.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Notas adicionales
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- La descripción de cada especie intenta español primero; si no existe, se muestra en inglés.
+- Familia y orden se obtienen desde Wikidata y se muestran legibles en español.
+- El número de aves mostrado por defecto es 10 para pruebas, pero se puede ajustar en BirdsList.js.
 
-## Learn More
+5. Autor
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Nombre: Shakira Priscilla Martínez Reyes
+- Carné: 15000339
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
